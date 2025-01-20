@@ -8,7 +8,7 @@
     <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
 
     <h1>Hello!</h1>
-    <a href="google.com">Google it 10!</a>
+    <a href="google.com">Google it 11!</a>
 
     <a-scene
       mindar-image="imageTargetSrc: ./targets.mind; filterMinCF: 0.001; filterBeta: 0.1;"
@@ -45,10 +45,9 @@
         animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
       ></a-image>
 
-
-
         <!-- <a-gltf-model rotation="0 0 0 " position="0 -0.3 0" scale="0.05 0.05 0.05" src="#3dModel"  animation="property: scale; from: 0 0 0; to: 0.005 0.005 0.005;  dur: 1000; easing: easeInOutQuad; loop: false; dir: alternate"> -->
-      </a-entity>
+            <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
+        </a-entity>
     </a-scene>
 
     <script>
@@ -63,7 +62,14 @@
       const webButton = document.querySelector("#web-button");
 
       webButton.addEventListener('click', function (evt) {
-           window.location.href="https://google.com";;
+            text.setAttribute("value", "https://softmind.tech");
+          currentTab = 'web';
+        });
+
+        text.addEventListener('click', function (evt) {
+          if (currentTab === 'web') {
+            window.location.href="https://softmind.tech";
+          }
         });
 
     </script>
