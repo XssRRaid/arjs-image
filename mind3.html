@@ -28,11 +28,12 @@
 
         let currentTab = '';
         webButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "https://softmind.tech");
+          text.setAttribute("value", "https://google.com");
+          window.location.href="https://google.com";
           currentTab = 'web';
         });
         emailButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "hello@softmind.tech");
+          text.setAttribute("value", "hello@xyz.com");
           currentTab = 'email';
         });
         profileButton.addEventListener('click', function (evt) {
@@ -47,7 +48,7 @@
 
         text.addEventListener('click', function (evt) {
           if (currentTab === 'web') {
-            window.location.href="https://softmind.tech";
+            window.location.href="https://google.com";
           }
         });
       }
@@ -221,7 +222,7 @@
     <div class="example-container">
       <div id="example-scanning-overlay" class="hidden">
 	<div class="inner">
-	  <img src="./assets/card-example/card.png"/>
+	  <img src="./back.jpg"/>
 	  <div class="scanline"></div>
 	</div>
       </div>
@@ -243,7 +244,9 @@
           <img id="coffeemachine-preview" src="./assets/card-example/portfolio/coffeemachine-preview.png" />
           <img id="peak-preview" src="./assets/card-example/portfolio/peak-preview.png" />
           
-          <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+            <a-asset-item id="3dModel" src="./3d.glb"></a-asset-item>
+
+          <!-- <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item> -->
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
@@ -288,7 +291,7 @@
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
-          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model>
+          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#3dModel"></a-gltf-model>
 
           <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
         </a-entity>
