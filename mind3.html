@@ -28,8 +28,8 @@
 
         let currentTab = '';
         webButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "https://google.com");
-          window.location.href="https://google.com";
+          text.setAttribute("value", "https://mancunianz.co.in/");
+          window.location.href="https://mancunianz.co.in/";
           currentTab = 'web';
         });
         emailButton.addEventListener('click', function (evt) {
@@ -48,7 +48,7 @@
 
         text.addEventListener('click', function (evt) {
           if (currentTab === 'web') {
-            window.location.href="https://google.com";
+            window.location.href="https://mancunianz.co.in/";
           }
         });
       }
@@ -229,7 +229,7 @@
 
       <a-scene mindar-image="imageTargetSrc: ./targets.mind; filterMinCF: 0.001; filterBeta: 0.1; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
-          <img id="card" src="./back.jpg" />
+          <img id="card" src="./flyer.jpeg" />
           <img id="icon-web" src="./assets/card-example/icons/web.png" />
           <img id="icon-location" src="./assets/card-example/icons/location.png" />
           <img id="icon-profile" src="./assets/card-example/icons/profile.png" />
